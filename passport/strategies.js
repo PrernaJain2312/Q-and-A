@@ -1,5 +1,6 @@
 const LocalStrategy = require('passport-local').Strategy
 const userBase = require('../db/models').userBase
+const passwordHash = require('password-hash')
 
 const localStrategy = new LocalStrategy(
     (username, password, done) => {
@@ -13,7 +14,7 @@ const localStrategy = new LocalStrategy(
                 //Wrong username
                 return done(null, false, {message: 'Wrong username'})
             }
-            if (user.password === password) {
+            if (passwordHash.verify(password,user.password)) {
                 // Correct user and password
                 return done(null, user)
             } else {
