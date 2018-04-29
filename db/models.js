@@ -8,7 +8,8 @@ const db = new Sequelize( "QandA", "QandAUser", "QandAPass", {
 const userBase = db.define('user', {
     username: {
         type: DataTypes.STRING,
-        primaryKey: true
+        allowNull:false,
+        unique: true
     },
     password: {
         type: DataTypes.STRING,
@@ -17,13 +18,21 @@ const userBase = db.define('user', {
 })
 
 const quesBank = db.define('question', {
-    directory: {
+    grade: {
         type: DataTypes.STRING,
-        primaryKey: true
+        allowNull: false
     },
-    ques: {
+    subject: {
         type: DataTypes.STRING,
-        primaryKey: true
+        allowNull: false
+    },
+    topic: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    question: {
+        type: DataTypes.STRING,
+        allowNull:false
     },
     answer: {
         type: DataTypes.STRING,
@@ -31,7 +40,7 @@ const quesBank = db.define('question', {
     }
 })
 
-db.sync().then(() => "Database created")
+db.sync().then(() => "Database created");
 
 exports = module.exports = {
     db,
