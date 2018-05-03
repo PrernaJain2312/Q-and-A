@@ -1,0 +1,19 @@
+.navbar-brand{
+    font-weight: bold;
+    font-size: xx-large;
+    font-family: "Calibri";
+}
+
+.navbar-nav{
+    color: white;
+    font-size: x-large;
+    font-family: "Calibri";
+}
+
+.panel{
+    width: 20%;
+    background: whitesmoke;
+}
+button:hover{
+    text-decoration: none;
+}
