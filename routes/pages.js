@@ -4,8 +4,6 @@ const passport = require('../passport')
 
 route.get('/home', (req, res) => {
     if (req.user) {
-        // const questions = quesBank.findAll({})
-        // console.log(questions.grade)
         return res.render('home',{ user: req.user})
     }
     res.redirect('/users/signin')
