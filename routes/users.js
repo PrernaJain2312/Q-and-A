@@ -17,7 +17,7 @@ route.post('/signup', (req, res) => {
 })
 
 route.post('/signin', passport.authenticate('local', {
-    successRedirect: '/pages/quesForm',
+    successRedirect: '/pages/home',
     failureRedirect: '/users/signin'
 }))
 
