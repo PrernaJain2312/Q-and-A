@@ -9,4 +9,22 @@ route.get('/home', (req, res) => {
     res.redirect('/users/signin')
 })
 
+route.get('/addQues', (req, res) => {
+    if (req.user.username === 'admin') {
+        return res.render('addQues')
+    }
+    res.redirect('/pages/home')
+})
+
+route.post('/addQues', (req, res) => {
+    quesBank.create({
+        grade: req.body.grade,
+        subject: req.body.subject,
+        topic: req.body.topic,
+        question: req.body.question,
+        answer: req.body.answer,
+    })
+    res.redirect('/pages/addQues')
+})
+
 exports = module.exports = route

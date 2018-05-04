@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QandA</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheetQues.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg py-0 navbar-dark bg-dark">
+        <a class="navbar-brand m-0"><span style="color: white"> Q and A</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02 ">
+            <div class="navbar-nav mt-2 mt-lg-0">
+                <div class="col-lg-12"></div>
+                <div class="col-lg-12"></div>
+                <div class="col-lg-9"></div>
+                <div class="nav-item mt-2 col-lg-auto mb-1">
+                        <button class="btn btn-light mb-1" type="submit" onclick="location.href='/pages/home'" style="color: black">See Questions</button>
+                </div>
+                <div class="nav-item mt-2 col-lg-auto mb-1">
+                    <button class="btn btn-light mb-1" type="submit" onclick="location.href='/users/signin'" style="color: black">Sign Out</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="image">
+                <img src="/banner.jpg" width="1365" height="280">
+            </div>
+            <div class="text">
+                 Add a Question
+            </div>
+            <div class="ques">
+                <form class="form-group container-fluid" action="/pages/addQues" method="post">
+                    <div class="row">
+                        Grade :&emsp;&emsp;
+                        <input class="form-control" name="grade" type="text">
+                    </div>
+                    <div class="row">
+                        Subject :&emsp;&nbsp;&nbsp;
+                        <input class="form-control" name="subject" type="text">
+                    </div>
+                    <div class="row">
+                        Topic : &emsp;&emsp;&nbsp;
+                        <input class="form-control" name="topic" type="text">
+                    </div>
+                    <div class="row">
+                        Question :&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="form-control" name="question" type="text">
+                    </div>
+                    <div class="row">
+                        Answer :&emsp;&nbsp;&nbsp;
+                        <input class="form-control" name="answer" type="text">
+                    </div>
+                    <br>
+                    <div class="button">
+                        <input type="submit" class="btn btn-lg btn-outline-warning">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
